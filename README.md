@@ -1,5 +1,5 @@
 #SwagPapers
-###Forked from https://github.com/FruitsAndVeggies/packages_apps_fnv-wallpapers
+###Forked from https://github.com/cr5315/packages_apps_fnv-wallpapers originally
 
 #How it works
-TBD!
+Magic.
