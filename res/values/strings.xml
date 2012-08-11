@@ -1,7 +1,7 @@
 <resources>
 
-    <string name="app_name">FNVPapers</string>
-    <string name="title_activity_wallpaper">FNV WallPapers</string>
+    <string name="app_name">FNV Wallpapers</string>
+    <string name="title_activity_wallpaper">FNV Wallpapers</string>
     <string name="back">Previous</string>
     <string name="next">Next</string>
     <string name="page">Page: </string>
@@ -16,5 +16,10 @@
     <string name="about">About</string>
     <string name="wars">Wallpaper Wars</string>
     <string name="vote">Vote!</string>
+    <string name="menu_about">About</string>
+    <string name="about_by">Made by cr5315</string>
+    <string name="about_withhelp">With much help from romann</string>
+    <string name="about_version">Version:</string>
+    <string name="loading">Retrieving wallpapers from server…</string>
 
 </resources>

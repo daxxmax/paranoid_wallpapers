@@ -1,5 +1,5 @@
 
-package com.aokp.swagpapers;
+package com.fnv.wallpapers;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -7,6 +7,8 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager.NameNotFoundException;
 import android.gesture.Gesture;
 import android.gesture.GestureLibraries;
 import android.gesture.GestureLibrary;
@@ -42,13 +44,24 @@ public class WallpaperActivity extends Activity implements OnGesturePerformedLis
 
     private GestureLibrary gestureLib;
 
-    protected final String TAG = "SwagPapers";
+    protected final String TAG = "FNV Wallpapers";
 
     public int currentPage = -1;
     public int highestExistingIndex = 0;
     Button back;
     Button next;
     TextView pageNum;
+    String version;
+    String resourceText;
+    
+    String title1;
+    String title2;
+    String title3;
+    String title4;
+    String author1;
+    String author2;
+    String author3;
+    String author4;
 
     ThumbnailView[] thumbs;
     protected static final int THUMBS_TO_SHOW = 4;
@@ -101,7 +114,7 @@ public class WallpaperActivity extends Activity implements OnGesturePerformedLis
         mLoadingDialog = new ProgressDialog(this);
         mLoadingDialog.setCancelable(false);
         mLoadingDialog.setIndeterminate(true);
-        mLoadingDialog.setMessage("Retreiving wallpapers from server...");
+        mLoadingDialog.setMessage(getResource(R.string.loading));
 
         mLoadingDialog.show();
         new LoadWallpaperManifest().execute();
@@ -211,9 +224,21 @@ public class WallpaperActivity extends Activity implements OnGesturePerformedLis
             case R.id.jump:
                 jumpTo();
                 return true;
-            case R.id.vote:
-                Intent v = new Intent(WallpaperActivity.this, Vote.class);
-                startActivity(v);
+            case R.id.menu_about:
+            	AlertDialog.Builder b = new AlertDialog.Builder(this);
+            	b.setTitle(R.string.app_name);
+            	b.setIcon(R.drawable.ic_menu_info_details);
+            	b.setMessage(getResource(R.string.about_version) + " " + getVersion() + "\n\n" +
+            			getResource(R.string.about_by) + "\n" + getResource(R.string.about_withhelp));
+            	b.setNeutralButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+					
+					public void onClick(DialogInterface dialog, int which) {
+						// TODO Auto-generated method stub
+						dialog.cancel();
+					}
+				});
+            	b.create().show();
+            	return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -238,7 +263,23 @@ public class WallpaperActivity extends Activity implements OnGesturePerformedLis
             }
         });
         j.create().show();
-
+    }
+    
+    public String getVersion() {
+		try {
+    		PackageInfo packageInfo = getPackageManager().getPackageInfo(getPackageName(),0);
+    		version = packageInfo.versionName;
+    		} catch (NameNotFoundException e) {
+    		// TODO Auto-generated catch block
+    		e.printStackTrace();
+    		version = "Cannot load Version!";
+    		}
+    	return version;
+    }
+    
+    public String getResource(int r) {
+    	resourceText = getResources().getString(r);
+    	return resourceText;
     }
 
     protected String getWallpaperDestinationPath() {
@@ -284,7 +325,6 @@ public class WallpaperActivity extends Activity implements OnGesturePerformedLis
             this.index = index;
         }
 
-        @Override
         public void onLoaded(ImageView imageView, Drawable loadedDrawable, String url,
                 boolean loadedFromCache) {
 
@@ -306,7 +346,6 @@ public class WallpaperActivity extends Activity implements OnGesturePerformedLis
             this.wall = wallpaper;
         }
 
-        @Override
         public void onClick(View v) {
             Intent preview = new Intent(WallpaperActivity.this, Preview.class);
             preview.putExtra("wp", wall.getUrl());
@@ -317,7 +356,8 @@ public class WallpaperActivity extends Activity implements OnGesturePerformedLis
     private class LoadWallpaperManifest extends
             AsyncTask<Void, Boolean, ArrayList<WallpaperCategory>> {
 
-        @Override
+        @SuppressWarnings("unused")
+		@Override
         protected ArrayList<WallpaperCategory> doInBackground(Void... v) {
             try {
                 URL url = new URL(getResourceString(R.string.config_wallpaper_manifest_url));

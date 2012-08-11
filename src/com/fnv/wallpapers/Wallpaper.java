@@ -1,5 +1,5 @@
 
-package com.aokp.swagpapers;
+package com.fnv.wallpapers;
 
 public class Wallpaper {
 

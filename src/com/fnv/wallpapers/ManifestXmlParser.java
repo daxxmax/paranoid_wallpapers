@@ -1,5 +1,5 @@
 
-package com.aokp.swagpapers;
+package com.fnv.wallpapers;
 
 import android.util.Log;
 
@@ -9,7 +9,6 @@ import org.xml.sax.helpers.DefaultHandler;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;

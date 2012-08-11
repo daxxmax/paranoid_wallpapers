@@ -1,5 +1,4 @@
-#FNVPapers
-###Forked from https://github.com/cr5315/packages_apps_fnv-wallpapers originally - modified by romanbb to be better, faster, stronger.
+FNV Wallpapers
+===========================
 
-#How it works
-Magic.
+Wallpapers app for Fruits And Veggies ROM

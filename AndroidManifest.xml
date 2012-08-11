@@ -27,7 +27,6 @@
         <activity
             android:name=".Preview"
             android:configChanges="orientation|screenSize" />
-        <activity android:name=".Vote" />
     </application>
 
 </manifest>
