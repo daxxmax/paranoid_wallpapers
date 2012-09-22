@@ -25,7 +25,6 @@
             android:layout_centerHorizontal="true"
             android:ellipsize="end"
             android:singleLine="true"
-            android:text="name"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@android:color/white" />
 
@@ -38,7 +37,6 @@
             android:layout_centerHorizontal="true"
             android:ellipsize="end"
             android:singleLine="true"
-            android:text="author"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:textColor="@android:color/white" />
 
