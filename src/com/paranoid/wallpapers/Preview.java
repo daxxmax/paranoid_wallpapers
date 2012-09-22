@@ -1,5 +1,5 @@
 
-package com.fnv.wallpapers;
+package com.paranoid.wallpapers;
 
 import android.app.ActionBar;
 import android.app.Activity;

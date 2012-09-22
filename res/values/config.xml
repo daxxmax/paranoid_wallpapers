@@ -2,12 +2,12 @@
 <resources>
 
     <!-- Where to store the wallpapers (just the folder name) -->
-    <string name="config_wallpaper_sdcard_dl_location">/FNV/Wallpapers</string>
+    <string name="config_wallpaper_sdcard_dl_location">/Paranoid/Wallpapers</string>
 
     <!-- Directory to download wallpapers to on external storage. Leave blank for "/sdcard/" -->
-    <string name="config_wallpaper_download_loc">/FNV/Wallpapers</string>
+    <string name="config_wallpaper_download_loc">/Paranoid/Wallpapers</string>
 
     <!-- url to the wallpaper manifest -->
-    <string name="config_wallpaper_manifest_url">https://raw.github.com/FruitsAndVeggies/fnvpapers_manifest/gh-pages/wallpaper_manifest.xml</string>
+    <string name="config_wallpaper_manifest_url">https://raw.github.com/daxxmax/ParanoidWalls_manifest/gh-pages/wallpaper_manifest.xml</string>
 
 </resources>

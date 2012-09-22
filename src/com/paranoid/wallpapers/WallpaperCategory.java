@@ -1,5 +1,5 @@
 
-package com.fnv.wallpapers;
+package com.paranoid.wallpapers;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,5 +1,5 @@
 
-package com.fnv.wallpapers;
+package com.paranoid.wallpapers;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -44,7 +44,7 @@ public class WallpaperActivity extends Activity implements OnGesturePerformedLis
 
     private GestureLibrary gestureLib;
 
-    protected final String TAG = "FNV Wallpapers";
+    protected final String TAG = "Paranoid Wallpapers";
 
     public int currentPage = -1;
     public int highestExistingIndex = 0;

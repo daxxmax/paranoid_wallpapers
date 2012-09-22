@@ -1,4 +1,4 @@
-FNV Wallpapers
+Paranoid Wallpapers
 ===========================
 
-Wallpapers app for Fruits And Veggies ROM
+Wallpapers app for Dark ParanoidAndroid ROM

@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.fnv.wallpapers"
+    package="com.paranoid.wallpapers"
     android:versionCode="10"
     android:versionName="2.0" >
 
